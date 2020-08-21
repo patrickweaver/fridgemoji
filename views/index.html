@@ -1,0 +1,163 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+
+<!-- You might want to try something fancier: -->
+<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
+<!-- pug: https://pugjs.org/ -->
+<!-- haml: http://haml.info/ -->
+<!-- hbs(handlebars): http://handlebarsjs.com/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Mouse Fridge's Fridgemoji</title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Social -->
+    <meta property="og:title" content="Fridgemoji -- The Fridge Sorting Game!"/>
+    <meta property="og:description" content="Pay what you wish for this fun MMO game where you can sort the Mouse fridge with everyone else." />
+    <meta property="og:image" content="https://cdn.glitch.com/ae77c44c-bb0d-4bd1-9562-94f5e79f0c71%2Ffridgemoji-crop.png?v=1575398956167" />
+    
+    <!- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@mousefridge">
+    <meta name="twitter:creator" content="@mousefridge">
+    <meta name="twitter:title" content="Fridgemoji -- The Fridge Sorting Game!">
+    <meta name="twitter:description" content="Pay what you wish for this fun MMO game where you can sort the Mouse fridge with everyone else.">
+    <meta name="twitter:image" content="https://cdn.glitch.com/ae77c44c-bb0d-4bd1-9562-94f5e79f0c71%2Ffridgemoji-crop.png?v=1575398956167">
+    
+    
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+      integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+      crossorigin="anonymous"></script>
+    <script src="jquery.ui.touch-punch.min.js"></script>
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- import the webpage's client-side javascript file -->
+    <script src="/client.js" defer></script>
+  </head>
+  <body>
+    <div id="description">
+      <h2>
+        Welcome to Mouse Fridge!
+      </h2>
+
+      <p>
+        Move the food around the fridge, try opening the drawers and look inside! Follow me on Twitter at <a href="https://twitter.com/mousefridge" target="_blank">@mousefridge</a>. Please be respectful of shelf and drawer space, there is only one fridge for all of us to share!
+      </p>
+    </div>
+    
+    <div id="form">
+      <form id="food-form">
+        <label>Add some food:</label><br>
+        <input id="food-input" type="text" /> <button id="form-submit-button" value="submit">↪️</button>
+      </form>
+    </div>
+    
+    
+    <div id="container">
+  
+      <div id="fridge">
+        <div id="lightbulb">
+          💡
+        </div>
+        <div id="top-shelf" class="shelf"></div>
+        <div id="top-shelf-surface" class="surface"></div>
+        <div id="middle-shelf" class="shelf"></div>
+        <div id="middle-shelf-surface" class="surface"></div>
+        <div id="left-drawer" class="drawer">
+          <div class="drawer-inside"></div>
+          <div class="drawer-back-wall drawer-wall"></div>
+          <div class="drawer-left-wall drawer-wall"></div>
+          <div class="drawer-right-wall drawer-wall"></div>
+          <div class="drawer-face-open"></div>
+          <div class="drawer-face"></div>
+          <div class="drawer-sight-block"></div>
+        </div>
+        <div id="right-drawer" class="drawer">
+          <div class="drawer-inside"></div>
+          <div class="drawer-back-wall drawer-wall"></div>
+          <div class="drawer-left-wall drawer-wall"></div>
+          <div class="drawer-right-wall drawer-wall"></div>
+          <div class="drawer-face-open"></div>
+          <div class="drawer-face"></div>
+          <div class="drawer-sight-block"></div>
+        </div>
+        <div id="drawer-behind"></div>
+        <div id="bottom-wall-left" class="bottom-wall"></div>
+        <div id="bottom-wall-right" class="bottom-wall"></div>
+        <div id="bottom-shelf" class="shelf"></div>
+        <div id="bottom-shelf-surface" class="surface"></div>
+        <div id="bottom-drawer" class="drawer">
+          <div class="drawer-inside"></div>
+          <div class="drawer-back-wall drawer-wall"></div>
+          <div class="drawer-left-wall drawer-wall"></div>
+          <div class="drawer-right-wall drawer-wall"></div>
+          <div class="drawer-face-open"></div>
+          <div class="drawer-face"></div>
+        </div>
+      </div>
+
+      <div id="invisible-fridge">
+        <div id="emoji">
+        </div>
+        <div id="trash-can">
+        
+        </div>
+      </div>
+
+      
+    </div>
+    
+    <div id="trash-button-container">
+      <h4 id="get-trash">
+        Get trash can: 
+      </h4><h4 id="away-trash">
+        Return trash can:
+      </h4><button id="trash-button">
+        🗑
+      </button>
+    </div>
+
+    
+
+
+
+    <div id="help">
+      <h3>What is food?</h3>
+      <p>
+        Here is some food:  🍊 🍋 🍌 🍍 🍎 🍏 🍐 🍑 🍒 🍓 🥝 🍅🥜 🌰 🍞 🥐 🥖 🥨 🥞 🧀 🍖 🍗 🥩 🥓 🍔 🍟 🍕 🌭 🥪 🌮 🌯 🥙 🥚 🍳  🥫 🍱 🍘 🍙 🍚 🍛 🥥 🥑 🍆 🥔 🥕 🌽 🌶 🥒 🥦 🍄  🍜 🍝 🍠 🍢 🍣 🍤 🍥 🍡 🎂 🧦 🛍 🦎 🐟 🥟 🥠 🥡 🍦 🍧 🍨 🍩 🍪 🍰 🍫 🍬 🍭 🍮 🍯 🍼 🥛 ☕ 🍵 🍶 🍾 🍷 🍸🐠 🐡 🦈 🐙 🐚 🦀 🐌 🐛 🐜 🦗 🌱 🍇 🍈 🍉  🍹 🍺 🥂 🥃 🥤 🎃 🎾 🎲 💾🥘 🍲 🥣 🥗 🍿 🥧
+      </p>
+    </div>
+
+    
+    <a href="https://mouse.org" id="mouse-link" target="_blank">
+      <div id="mouse">
+        <h4>mouse.org
+        </h4>
+        <img id="gear" src="https://cdn.glitch.com/ae77c44c-bb0d-4bd1-9562-94f5e79f0c71%2Fcharacter_gear.png?1532005276458">
+      </div>
+    </a>
+    
+    <div id="donate" style="display: none;">
+      <p>#GivingTuesday Special<br>Pay what you wish for Fridgemoji!<br>All proceeds go to  <a href="https://twitter.com/mouse_org" target="_blank">@mouse_org</a><br></p>
+      <a href="https://mouse.org/donate" target="_blank" class="donate-button">Donate</a>
+    </div>
+
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+    <div class="glitchButton" style="margin-left: 80%; margin-bottom: 250px;"></div>
+    <script src="https://button.glitch.me/button.js"></script>
+
+  </body>
+</html>
