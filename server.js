@@ -7,10 +7,6 @@ var bodyParser = require('body-parser');
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// we've started you off with Express, 
-// but feel free to use whatever libs or frameworks you'd like through `package.json`.
-
-// http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'));
 
 // init sqlite db
@@ -36,7 +32,6 @@ db.serialize(function(){
   }
 });
 
-// http://expressjs.com/en/starter/basic-routing.html
 app.get('/', function(request, response) {
   response.sendFile(__dirname + '/views/index.html');
 });
@@ -80,15 +75,6 @@ app.get('/delete', function(req, res) {
   console.log("Deleted: " + emojiId);
   res.status(200);
   res.json({status: "Deleted"});
-});
-        
-//DELETE FROM employees
-//WHERE last_name = 'Smith';
-
-app.get('/z', function(req, res) {
-  console.log("MOVING!");
-  res.status(200);
-  res.json({status: "OK"});
 });
 
 // listen for requests :)
